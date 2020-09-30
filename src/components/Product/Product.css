@@ -1,0 +1,27 @@
+.product{
+    display: flex;
+    padding: 40px;
+    margin: 20px 40px;
+    box-shadow: 10px 10px 30px  rgba(0, 0, 0, 0.4);
+}
+.product-name{
+     text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+    text-shadow: 8px 3px 4px rgba(0, 0, 0, 0.1);
+}
+.main-btn{
+    background: goldenrod;
+    width: 150px;
+    height: 30px;
+    border: none;
+    margin: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+}
+.product-box{
+    margin-left: 20px;
+}

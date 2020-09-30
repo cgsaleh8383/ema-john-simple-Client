@@ -1,0 +1,7 @@
+.product-title {
+    text-align: center;
+    margin: 40px 0;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+    text-shadow: 8px 3px 4px rgba(0, 0, 0, 0.2);
+}

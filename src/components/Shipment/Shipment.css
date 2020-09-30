@@ -1,0 +1,20 @@
+.ship-from{
+    margin: 30px 600px;
+}
+
+.ship-from input{
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    width: 300px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.error{
+    color: red;
+}
+
