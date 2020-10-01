@@ -1,3 +1,4 @@
+import { Button } from '@material-ui/core';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
@@ -16,7 +17,9 @@ const Header = () => {
                 <Link to="/review">Review</Link>
                 <Link to="/orders">Order History</Link>
                 <Link to="/"><span style={{ color: 'pink'}}>Welcome to {loggedInUser.name}</span></Link>
-                <button onClick={() => setLoggedInUser({})}>Sign Out</button>
+                <Button onClick={() => setLoggedInUser({})} variant="contained" color="primary">
+                    Sign Out
+                </Button>
             </nav>
         </div>
     );

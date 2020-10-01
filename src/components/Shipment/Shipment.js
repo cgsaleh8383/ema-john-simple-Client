@@ -10,6 +10,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { getDatabaseCart, processOrder } from '../../utilities/databaseManager';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -51,7 +52,23 @@ const Shipment = () => {
     const { register, handleSubmit, watch, errors } = useForm();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const onSubmit = data => {
-        console.log('from submitted', data)
+        const savedCart = getDatabaseCart();
+        const orderDetails = { ...loggedInUser, products: savedCart, shipping: data, orderTime: new Date()};
+
+        fetch('http://localhost:5000/addOrder', {
+            method: 'POST',
+            headers: {
+                 'Content-Type': 'application/json'
+                 },
+                 body: JSON.stringify(orderDetails)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data){
+                processOrder()
+                alert('Your order was successfully')
+            }
+        })
     };
 
     console.log(watch("example"));
