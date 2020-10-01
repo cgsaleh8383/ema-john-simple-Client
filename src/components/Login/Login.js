@@ -99,11 +99,13 @@ function Login() {
         <div style={{ textAlign: 'center' }}>
 
             {
-                user.isSignedIn ? <button onClick={singOut}>Sing out</button> :
-                    <button onClick={googleSingIn}>Sing in</button>
+                user.isSignedIn ? <button className='google_singIn' onClick={singOut}>Sing out</button> :
+                    <button className='google_singIn' onClick={googleSingIn}>Sing in</button>
 
             }
-            <button onClick={FbSignIn}>Sing in Using Facebook</button>
+            <br/>
+            <button className='facebook_singIn' onClick={FbSignIn}>Sing in Using Facebook</button>
+           
             {
                 user.isSignedIn &&
                 <div>
@@ -120,10 +122,10 @@ function Login() {
                 {newUser && <input type="text" onBlur={handleChange} name="name" id="" placeholder="enter your name" />}
                 <input type="email" onBlur={handleChange} name='email' placeholder="enter your email" required />
                 <input type="password" onBlur={handleChange} name="password" id="" placeholder="Enter your password" required />
-                <input type="submit" value={newUser ? 'Sing Up' : 'Sing In'} />
+                <input class="form_submit" type="submit" value={newUser ? 'Sing Up' : 'Sing In'} />
             </form>
-            <Button className='ship-from' onClick={() => resetPasswords(user.email)} variant="contained" color="primary">
-                FOrget Or Reset password
+            <Button className='ship-from ' onClick={() => resetPasswords(user.email)} variant="contained" color="primary">
+                 Reset password
              </Button>
             <p style={{ color: 'red' }}>{user.error}</p>
             {user.success && <p style={{ color: 'green' }}>User {newUser ? 'created' : 'Logged In'} Successfully</p>}

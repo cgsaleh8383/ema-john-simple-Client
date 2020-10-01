@@ -15,7 +15,7 @@ const Inventory = (props) => {
     }
 
     return (
-        <div style={{ textAlign: 'center' }}>
+        <div className="ship-from" style={{ textAlign: 'center' }}>
             <from action="">
 
                 <p><span>Name: </span><input type="text"/></p>
