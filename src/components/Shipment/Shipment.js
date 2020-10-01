@@ -55,7 +55,7 @@ const Shipment = () => {
         const savedCart = getDatabaseCart();
         const orderDetails = { ...loggedInUser, products: savedCart, shipping: data, orderTime: new Date()};
 
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://fathomless-taiga-01948.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                  'Content-Type': 'application/json'

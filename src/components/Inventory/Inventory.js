@@ -5,7 +5,7 @@ const Inventory = (props) => {
 
     const handleAddProduct = () => {
         const product = {};
-        fetch("http://localhost:5000/addProduct", {
+        fetch("https://fathomless-taiga-01948.herokuapp.com/addProduct", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -15,7 +15,7 @@ const Inventory = (props) => {
     }
 
     return (
-        <div style={{ textAlign: 'center' }}>
+        <div className="ship-from" style={{ textAlign: 'center' }}>
             <from action="">
 
                 <p><span>Name: </span><input type="text"/></p>
