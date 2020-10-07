@@ -15,3 +15,8 @@
     position: fixed;
     right: 13px;
 }
+
+.product-container img{
+    width: 300px;
+    height: 200px;
+}

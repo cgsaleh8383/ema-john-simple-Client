@@ -4,10 +4,13 @@ import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
 import { Link } from 'react-router-dom';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
+import { CircularProgress } from '@material-ui/core';
+import loadingGift from './loading.gif'
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    document.title = 'Shop'
 
     useEffect(() => {
         fetch('https://fathomless-taiga-01948.herokuapp.com/products')
@@ -53,6 +56,10 @@ const Shop = () => {
     return (
         <div className="shop-container">
             <div className="product-container">
+                {
+                    products.length === 0 && <img src={loadingGift} alt=""/>
+                }
+
                 {
                     products.map(pd => <Product
                         key={pd.key}
