@@ -116,7 +116,7 @@ const SplitCardForm = () => {
             <br />
             <button className='pay' type="submit" disabled={!stripe}>
                 Pay
-      </button>
+        </button>
         </form>
     );
 };

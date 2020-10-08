@@ -21,3 +21,14 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+================ payment ===============
+
+API keys: https://dashboard.stripe.com/test/apikeys
+Accept a payment: https://stripe.com/docs/checkout/integration-builder
+https://dashboard.stripe.com/settings/team
+Developer Tools: https://stripe.com/docs/stripe-js/react
+https://codesandbox.io/s/react-stripe-official-q1loc?fontsize=14&hidenavigation=1&theme=dark&file=/src/styles.css:0-2474
+
+react-native-responsive-fontsize: https://www.npmjs.com/package/react-native-responsive-fontsize

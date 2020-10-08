@@ -5,6 +5,7 @@ import Cart from '../Cart/Cart';
 import { Link } from 'react-router-dom';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
 import loadingGift from './loading.gif'
+import { Button } from '@material-ui/core';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -61,7 +62,13 @@ const Shop = () => {
     return (
         <div className="shop-container">
             <div className="product-container">
-                <input type="text" onBlur={handleBlur} placeholder="Search product" className="search_product"/>
+                <div className="search_input">
+                   
+                        <input type="text" onBlur={handleBlur} placeholder="Search product...." className="search_product" />
+                        <button className='search_btn' type="submit" variant="contained" color="primary">
+                            Search
+                        </button>
+                </div>
                 {
                     products.length === 0 && <img src={loadingGift} alt=""/>
                 }

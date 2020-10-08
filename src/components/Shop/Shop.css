@@ -1,5 +1,6 @@
 .shop-container{
     display: flex;
+    position: relative;
 }
 
 .product-container{
@@ -22,7 +23,33 @@
 }
 
 .search_product{
-    width: 300px;
+    position: relative;
+    width: 400px;
+    padding: 10px;
     height: 40px;
-    margin: auto;
+    margin: 20px 0 0 450px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+.search_btn{
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: -50px;
+    background: #007ACC;
+    z-index: 9999999;
+    border: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.search_input{
+    display: flex;
 }
