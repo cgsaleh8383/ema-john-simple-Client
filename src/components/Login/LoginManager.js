@@ -21,6 +21,7 @@ export const handleGoogleSingIn = () => {
                 photo: photoUrl,
                 success: true
             }
+            setUserToken();
             return singInUser;
 
         })
@@ -32,6 +33,16 @@ export const handleGoogleSingIn = () => {
     }
 
 
+    //User Id Token
+    const setUserToken = () => {
+        firebase.auth().currentUser.getIdToken( true )
+        .then(function (idToken) {
+            sessionStorage.setItem('token', idToken);
+        })
+        .catch(function (error) {
+            // Handle error
+        });
+    }
   
 
     //Google singOut

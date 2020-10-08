@@ -4,19 +4,20 @@ import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
 import { Link } from 'react-router-dom';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
-import { CircularProgress } from '@material-ui/core';
 import loadingGift from './loading.gif'
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    const [search, setSearch] = useState('');
+
     document.title = 'Shop'
 
     useEffect(() => {
-        fetch('https://fathomless-taiga-01948.herokuapp.com/products')
+        fetch('https://fathomless-taiga-01948.herokuapp.com/products?search='+search)
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [])
+    }, [search]);
 
     useEffect(() => {
         const savedCart = getDatabaseCart();
@@ -31,6 +32,10 @@ const Shop = () => {
             .then(res => res.json())
             .then(data => setCart(data));
     }, [])
+
+    const handleBlur = (event) => {
+        setSearch(event.target.value);
+    }
 
     const handleAddProduct = (product) => {
         const toBeaddedKey = product.key;
@@ -56,6 +61,7 @@ const Shop = () => {
     return (
         <div className="shop-container">
             <div className="product-container">
+                <input type="text" onBlur={handleBlur} placeholder="Search product" className="search_product"/>
                 {
                     products.length === 0 && <img src={loadingGift} alt=""/>
                 }

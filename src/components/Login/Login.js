@@ -3,6 +3,7 @@ import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
 import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSingIn, handleSingOut, initializeLoginFramework, resetPasswords, signInWithEmailAndPassword } from './LoginManager'
 import { Button } from '@material-ui/core';
+import './Login.css';
 
 
 
@@ -96,7 +97,7 @@ function Login() {
 
 
     return (
-        <div style={{ textAlign: 'center' }}>
+        <div className='container' style={{ textAlign: 'center', alignItems: 'center' }}>
 
             {
                 user.isSignedIn ? <button className='google_singIn' onClick={singOut}>Sing out</button> :
@@ -118,12 +119,14 @@ function Login() {
             <h1>Our own Authentication</h1>
             <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
             <label htmlFor="newUser">New User Sing Up</label>
-            <form className='ship-from' onSubmit={handleSubmit}>
-                {newUser && <input type="text" onBlur={handleChange} name="name" id="" placeholder="enter your name" />}
-                <input type="email" onBlur={handleChange} name='email' placeholder="enter your email" required />
-                <input type="password" onBlur={handleChange} name="password" id="" placeholder="Enter your password" required />
-                <input class="form_submit" type="submit" value={newUser ? 'Sing Up' : 'Sing In'} />
-            </form>
+            <div className="input_bar">
+                    <form className='ship-from' onSubmit={handleSubmit}>
+                        {newUser && <input type="text" onBlur={handleChange} name="name" id="" placeholder="enter your name" />}
+                        <input type="email" onBlur={handleChange} name='email' placeholder="enter your email" required />
+                        <input type="password" onBlur={handleChange} name="password" id="" placeholder="Enter your password" required />
+                        <input class="form_submit" type="submit" value={newUser ? 'Sing Up' : 'Sing In'} />
+                    </form>
+            </div>
             <Button className='ship-from ' onClick={() => resetPasswords(user.email)} variant="contained" color="primary">
                  Reset password
              </Button>
