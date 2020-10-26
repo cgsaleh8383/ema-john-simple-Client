@@ -1,27 +1,133 @@
-.product{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Slabo+27px&family=Syne+Mono&display=swap');
+*{
+    margin:  0;
+    padding:  0;
+    box-sizing:  border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+   
+    background: #ff7979 ;
+}
+.wrapper{
+    max-width: 100%;
     display: flex;
-    padding: 40px;
-    margin: 20px 40px;
-    box-shadow: 10px 10px 30px  rgba(0, 0, 0, 0.4);
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px;
 }
-.product-name{
-     text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.4);
-    text-shadow: 8px 3px 4px rgba(0, 0, 0, 0.1);
+.wrapper .card{
+    position: relative;
+    width:100%;
+    background:  #ffffff;
+    border-radius: 3px;
+    overflow: hidden;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
-.main-btn{
-    background: goldenrod;
-    width: 150px;
-    height: 30px;
-    border: none;
-    margin: 10px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+
+.wrapper .card img{
+    height:  380px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    transition:  .5s;
+    -webkit-transition:  .5s;
+    -moz-transition:  .5s;
+    -ms-transition:  .5s;
+    -o-transition:  .5s;
+}
+.wrapper .card:hover img {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.wrapper .card  .content {
+    position: absolute;
+    width: 100%;
+    margin-left: -15px;
+    background: #fff;
+    bottom:  -90%;
+    box-shadow:  0px -3px 10px  0 rgba(143, 139, 139, 0.15);
+    padding: 10px 20px 22px 40px;
+    transition: .5s;
+}
+
+.wrapper .card:hover .content {
+    bottom:  0;
+}
+
+.card  .content .row ,
+.card  .content .buttons {
+    display: flex;
+    justify-content : space-between;
+}
+
+
+.content .row .details  span{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.content .row .details  p{
+    color: #333;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.content .row  .price{
+    color: #ff7979;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.content .buttons {
+    margin-top: 20px;
+}
+
+.content .buttons button{
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+    font-size: 17px;
+    border: 2px solid #ff7979;
     cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
-.product-box{
-    margin-left: 20px;
+
+.buttons button:first-child{
+    background: transparent;
+    color: #ff7979;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+.buttons button:first-child:hover{
+    background: #ff7979;
+    color: #000000;
+}
+
+.buttons button:last-child{
+    background: #ff7979;
+    color: #000000;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
 }

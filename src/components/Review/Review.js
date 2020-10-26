@@ -56,7 +56,7 @@ const Review = () => {
                 }
                 { thankYou }
             </div>
-            <div className='cart-container'>
+            <div className=''>
                 <Cart cart={cart}>
                     <button onClick={handleProceedCheckout} className='main-btn'>Proceed Checkout</button>
                 </Cart>

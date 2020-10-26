@@ -15,7 +15,7 @@ const Shop = () => {
     document.title = 'Shop'
 
     useEffect(() => {
-        fetch('https://fathomless-taiga-01948.herokuapp.com/products?search='+search)
+        fetch('https://fathomless-taiga-01948.herokuapp.com/products?search=' + search)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [search]);
@@ -63,25 +63,27 @@ const Shop = () => {
         <div className="shop-container">
             <div className="product-container">
                 <div className="search_input">
-                   
-                        <input type="text" onBlur={handleBlur} placeholder="Search product...." className="search_product" />
-                        <button className='search_btn' type="submit" variant="contained" color="primary">
-                            Search
+
+                    <input type="text" onBlur={handleBlur} placeholder="Search product...." className="search_product" />
+                    <button className='search_btn' type="submit" variant="contained" color="primary">
+                        Search
                         </button>
                 </div>
                 {
-                    products.length === 0 && <img src={loadingGift} alt=""/>
+                    products.length === 0 && <img src={loadingGift} alt="" />
                 }
 
-                {
-                    products.map(pd => <Product
-                        key={pd.key}
-                        showAddToCard={true}
-                        handleAddProduct={handleAddProduct}
-                        product={pd}></Product>)
-                }
+                <div className='row'> 
+                    {
+                        products.map(pd => <Product
+                            key={pd.key}
+                            showAddToCard={true}
+                            handleAddProduct={handleAddProduct}
+                            product={pd}></Product>)
+                    }
+                </div>
             </div>
-            <div className="cart-container">
+            <div className="buttons">
                 <Cart cart={cart}>
                     <Link to='/review'>
                         <button className='main-btn'>Review order</button>
