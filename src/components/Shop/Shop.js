@@ -4,8 +4,7 @@ import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
 import { Link } from 'react-router-dom';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
-import loadingGift from './loading.gif'
-import { Button } from '@material-ui/core';
+import loadingGift from '../../images/looding.gif';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -62,18 +61,19 @@ const Shop = () => {
     return (
         <div className="shop-container">
             <div className="product-container">
-                <div className="search_input">
-
-                    <input type="text" onBlur={handleBlur} placeholder="Search product...." className="search_product" />
-                    <button className='search_btn' type="submit" variant="contained" color="primary">
-                        Search
-                        </button>
+                <div className="search_section">
+                    <div className="search_input">
+                        <input type="search" onChange={handleBlur} placeholder="Search product...." className="form-control mr-sm-2" />
+                        <button className='btn btn-outline-success my-2 my-sm-0' type="submit" variant="contained" color="primary">  Search </button>
+                    </div>
                 </div>
-                {
-                    products.length === 0 && <img src={loadingGift} alt="" />
-                }
+                <div className='loading'>
+                    {
+                        products.length === 0 && <img src={loadingGift} alt="" />
+                    }
+                </div>
 
-                <div className='row'> 
+                <div className='row'>
                     {
                         products.map(pd => <Product
                             key={pd.key}
@@ -83,7 +83,7 @@ const Shop = () => {
                     }
                 </div>
             </div>
-            <div className="buttons">
+            <div className="buttons_cart">
                 <Cart cart={cart}>
                     <Link to='/review'>
                         <button className='main-btn'>Review order</button>

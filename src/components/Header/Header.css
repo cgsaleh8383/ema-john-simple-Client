@@ -1,27 +1,3 @@
-.header img{
-    height: 88px;
-}
-.header{
-    text-align: center;
-}
-.header nav{
-    background: rgb(88, 85, 85);
-    line-height: 40px;
-    font-size: 20px;
-    padding: 10px;
-    
-}
-.header nav a{
-    text-decoration: none;
-    color: #fff;
-    margin-right: 20px;
-    padding: 10px;
-}
-.header nav a:hover{
-    background: chocolate;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
+.ema_navbar img{
+    width: 200px;
 }

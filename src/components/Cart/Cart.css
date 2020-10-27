@@ -1,4 +1,4 @@
-
+/* 
 *{
     margin: 0;
     padding: 0;
@@ -107,10 +107,7 @@
      z-index: 999999;
 }
 
-.toggle.active{
-    background: #ddd;
-    z-index: 99999999999;
-}
+
 
 .toggle::before{
     content: "\f0c9";
@@ -141,15 +138,113 @@
         left: 0px;
         width: 100%;
     }
-}
+} */
 
 
 
 
 
-.appointments_list{
+/* .appointments_list{
     background: #ddd;
     padding: 40px;
     height: 90vh;
     text-align: center;
+} */
+.total_add_cart{
+    position: fixed;
+    top: 20%;
+}
+
+.Order_history{
+    position: absolute;
+    top: 2%;
+    right: -210px;
+    width: 200px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    transition:  .5s;
+    -webkit-transition:  .5s;
+    -moz-transition:  .5s;
+    -ms-transition:  .5s;
+    -o-transition:  .5s;
+}
+
+/* .Order_history:hover, */
+.Order_history.active
+{
+    right: 0px;
+    padding: 20px;
+}
+
+
+.toggle.active{
+    background: #ddd;
+    z-index: 99999999999;
+}
+
+.toggle{
+     position: absolute;
+     top: 0;
+     right: 180px;
+     width: 200px;
+     height: 60px;
+     background: #7AB259;
+     cursor: pointer;
+     z-index: 999999;
+     transition:  .5s;
+     -webkit-transition:  .5s;
+     -moz-transition:  .5s;
+     -ms-transition:  .5s;
+     -o-transition:  .5s;
+}
+.Order_history.active .toggle{
+    position: absolute;
+    top: 100px;
+    right: 140px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
+
+.toggle::before{
+    content: "\f290 ";
+    font-family: fontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+}
+
+.toggle.active::before{
+    content: "\f00d";
+}
+
+.dashboard_header span{
+    background: #fff;
+    color: #000;
+    line-height: 60px;
+    padding:  15px;
+    margin: 0 10px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.Order_history.active .dashboard_header span{
+    background: #fff;
+    color: #000;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
 }

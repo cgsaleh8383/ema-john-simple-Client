@@ -53,3 +53,41 @@
 .search_input{
     display: flex;
 }
+
+
+.buttons_cart button{
+    padding:  10px 20px;
+    background: transparent;
+    border: 2px solid gray;
+    color: #ffffff;
+    border-radius: 50px;
+    transition:  .5s;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    -webkit-transition:  .5s;
+    -moz-transition:  .5s;
+    -ms-transition:  .5s;
+    -o-transition:  .5s;
+}
+
+.buttons_cart button:hover {
+    background: #FF7979
+}
+
+.loading img{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    height:  300px;
+}
+
+@media (max-width: 768px) {
+    .loading img{
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        height:  300px;
+    }
+}

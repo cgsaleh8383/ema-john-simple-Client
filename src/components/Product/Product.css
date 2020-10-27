@@ -131,3 +131,17 @@ body {
     -ms-transition: .5s;
     -o-transition: .5s;
 }
+
+
+.remove_button button {
+    padding: 10px 40px;
+    background: #ff7979;
+    border: none;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}

@@ -35,16 +35,36 @@ const Cart = (props) => {
 
 
     const toggleMenu = () => {
-        let navigation = document.querySelector('.navigation');
+        let navigation = document.querySelector('.Order_history');
         let toggle = document.querySelector('.toggle');
         navigation.classList.toggle('active')
         toggle.classList.toggle('active')
     };
     return (
-        <section>
-            <div className="sidebar_Container">
-                <div className='navigation'>
+        // <section>
+        //     <div className="sidebar_Container">
+        //         <div className='navigation'>
 
+        //             <h4>Order Summery</h4>
+        //             <p>Item Order: {cart.length}</p>
+        //             <p><small>Product price {formateNumber(totalPrice)}</small></p>
+        //             <p>Shipping: {shipping}</p>
+        //             <p><small>Text + Vat: {tex}</small></p>
+        //             <p>Total Price: {grandTotal}</p>
+        //             {
+        //                 props.children
+        //             }
+
+        //             <div className='dashboard_header'>
+        //                 <div className="toggle" onClick={toggleMenu}></div>
+        //             </div>
+        //         </div>
+        //     </div>
+        // </section>
+
+        <section className='total_add_cart '>
+            <div className="Order_history ">
+                <div className='text-center '>
                     <h4>Order Summery</h4>
                     <p>Item Order: {cart.length}</p>
                     <p><small>Product price {formateNumber(totalPrice)}</small></p>
@@ -54,25 +74,14 @@ const Cart = (props) => {
                     {
                         props.children
                     }
-
-                    <div className='dashboard_header'>
-                        <div className="toggle" onClick={toggleMenu}></div>
+                </div>
+                <div className='dashboard_header'>
+                    <div className="toggle" onClick={toggleMenu}>
+                        <span> {cart.length}</span>
                     </div>
                 </div>
             </div>
         </section>
-
-        //   // <div className='text-center mr-auto'>
-        //     {/* <h4>Order Summery</h4>
-        //     <p>Item Order: {cart.length}</p>
-        //     <p><small>Product price {formateNumber(totalPrice)}</small></p>
-        //     <p>Shipping: {shipping}</p>
-        //     <p><small>Text + Vat: {tex}</small></p>
-        //     <p>Total Price: {grandTotal}</p>
-        //     {
-        //         props.children
-        //     } */}
-        // // </div>
     );
 };
 
