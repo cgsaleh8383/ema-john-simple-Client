@@ -145,3 +145,20 @@ body {
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.review_item{
+    float: left;
+    margin: 40px 0;
+}

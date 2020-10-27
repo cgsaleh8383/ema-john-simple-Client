@@ -18,8 +18,8 @@ const ReviewItem = (props) => {
     //    </section>
 
 
-  <section className='row'>
-        <div style={{display: 'flex'}} class="wrapper">
+  <section className='review_item'>
+        <div class="wrapper">
             <div class="card col-md-12">
                 <img src={img} alt="" />
                 <div class="content">

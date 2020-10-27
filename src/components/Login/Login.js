@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
 import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSingIn, handleSingOut, initializeLoginFramework, resetPasswords, signInWithEmailAndPassword } from './LoginManager'
-import { Button } from '@material-ui/core';
+import { Button, Input } from '@material-ui/core';
 import './Login.css';
 
 
@@ -97,15 +97,16 @@ function Login() {
 
 
     return (
-        <div className='container' style={{ textAlign: 'center', alignItems: 'center' }}>
+        <div className='container Login_auth' style={{ textAlign: 'center', alignItems: 'center' }}>
 
-            {
-                user.isSignedIn ? <button className='google_singIn' onClick={singOut}>Sing out</button> :
-                    <button className='google_singIn' onClick={googleSingIn}>Sing in</button>
+            {/* {
+                user.isSignedIn ? <input className="form_submit" onClick={googleSingIn} type="submit" value='Sing out'/>:
+                   
+                    <input className="form_submit" onClick={googleSingIn} type="submit" value='Sing in'/>
 
             }
-            <br/>
-            <button className='facebook_singIn' onClick={FbSignIn}>Sing in Using Facebook</button>
+            
+            <input className="form_submit" onClick={FbSignIn} type="submit" value='Sing in Using Facebook'/> */}
            
             {
                 user.isSignedIn &&
@@ -124,7 +125,7 @@ function Login() {
                         {newUser && <input type="text" onBlur={handleChange} name="name" id="" placeholder="enter your name" />}
                         <input type="email" onBlur={handleChange} name='email' placeholder="enter your email" required />
                         <input type="password" onBlur={handleChange} name="password" id="" placeholder="Enter your password" required />
-                        <input class="form_submit" type="submit" value={newUser ? 'Sing Up' : 'Sing In'} />
+                        <input className="form_submit" type="submit" value={newUser ? 'Sing Up' : 'Sing In'} />
                     </form>
             </div>
             <Button className='ship-from ' onClick={() => resetPasswords(user.email)} variant="contained" color="primary">
@@ -132,6 +133,15 @@ function Login() {
              </Button>
             <p style={{ color: 'red' }}>{user.error}</p>
             {user.success && <p style={{ color: 'green' }}>User {newUser ? 'created' : 'Logged In'} Successfully</p>}
+
+            {
+                user.isSignedIn ? <input className="form_submit" onClick={googleSingIn} type="submit" value='Sing out'/>:
+                   
+                    <input className="form_submit" onClick={googleSingIn} type="submit" value='Sing in'/>
+
+            }
+            
+            <input className="form_submit" onClick={FbSignIn} type="submit" value='Sing in Using Facebook'/>
 
         </div>
     );

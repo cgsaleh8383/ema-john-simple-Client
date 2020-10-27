@@ -64,7 +64,7 @@ const Shop = () => {
                 <div className="search_section">
                     <div className="search_input">
                         <input type="search" onChange={handleBlur} placeholder="Search product...." className="form-control mr-sm-2" />
-                        <button className='btn btn-outline-success my-2 my-sm-0' type="submit" variant="contained" color="primary">  Search </button>
+                        {/* <button className='btn btn-outline-success my-2 my-sm-0' type="submit" variant="contained" color="primary">  Search </button> */}
                     </div>
                 </div>
                 <div className='loading'>
@@ -73,7 +73,7 @@ const Shop = () => {
                     }
                 </div>
 
-                <div className='row'>
+                <div className='row all_product'>
                     {
                         products.map(pd => <Product
                             key={pd.key}
